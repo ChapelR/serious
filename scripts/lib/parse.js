@@ -3,6 +3,7 @@
 var matter = require('gray-matter');
 var filenamify = require('filenamify');
 var jetpack = require('fs-jetpack');
+var config = require('../../config.json');
 
 var normalize = function (string) {
     var ret = filenamify(string, { replacement : '-' });
@@ -43,17 +44,17 @@ function parseFiles (array) {
 }
 
 function createIndex (episodes, path) {
-    var index = [];
+    var index = Object.assign({ story : [] }, config);
     try {
         episodes.forEach( function (ep) {
-            if (index.find( function (ind) {
+            if (index.story.find( function (ind) {
                 return ep.episode === ind.episode;
             })) {
                 throw new Error('Found two episodes with the same number: "' + ep.episode + '".')
             }
             var filename = normalize(ep.data.title) + '.json';
             ep.data.filename = filename;
-            index.push({
+            index.story.push({
                 title : ep.data.title,
                 excerpt : ep.data.excerpt,
                 episode : Number(ep.data.episode),

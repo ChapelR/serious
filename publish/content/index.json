@@ -1,7 +1,15 @@
-[
-  {
-    "title": "An Awesome Story",
-    "episode": 1,
-    "file": "an-awesome-story.json"
-  }
-]
+{
+  "story": [
+    {
+      "title": "An Awesome Story",
+      "episode": 1,
+      "file": "an-awesome-story.json"
+    }
+  ],
+  "title": "Serious Test",
+  "subtitle": "",
+  "input": "./src",
+  "output": "./publish/content",
+  "about": "",
+  "blog": "https://twinelab.net/blog"
+}

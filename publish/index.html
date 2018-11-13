@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/md.css">
 </head>
-<body data-debug="on">
+<body data-debug="on" data-ep="0">
 
 <div id="layout">
     <!-- Menu toggle -->
@@ -25,23 +25,23 @@
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">First</a>
+                    <a id="first-link" href="javascript:void(0)" class="pure-menu-link">First</a>
                 </li>
 
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Latest</a>
+                    <a id="last-link" href="javascript:void(0)" class="pure-menu-link">Latest</a>
                 </li>
 
                 <li class="pure-menu-item menu-item-divided">
-                    <a href="#" class="pure-menu-link">Episodes</a>
+                    <a id="list-link" href="javascript:void(0)" class="pure-menu-link">Episodes</a>
                 </li>
 
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">About</a>
+                    <a id="about-link" href="javascript:void(0)" class="pure-menu-link">About</a>
                 </li>
 
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Blog</a>
+                    <a id="blog-link" href="javascript:void(0)" class="pure-menu-link">Blog</a>
                 </li>
             </ul>
         </div>
@@ -49,8 +49,8 @@
 
     <div id="main">
         <div class="header">
-            <h1>Post Title</h1>
-            <h2>Post Subtitle</h2>
+            <h1 id="title">Post Title</h1>
+            <h2 id="subtitle">Post Subtitle</h2>
         </div>
 
         <div id="content">
@@ -68,8 +68,9 @@
 <script src="./scripts/url.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./scripts/load.js"></script>
 <script src="./scripts/renderer.js"></script>
+<script src="./scripts/load.js"></script>
+<script src="./scripts/menu.js"></script>
 
 </body>
 </html>
