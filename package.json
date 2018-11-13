@@ -1,0 +1,32 @@
+{
+  "name": "serious",
+  "version": "0.1.0",
+  "description": "A framework for serialized web fiction.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "node ./scripts/jsonify.js",
+    "clean": "node ./scripts/clean.js",
+    "opn": "opn",
+    "serve": "concurrently \"http-server -a localhost -p 8000\" \"opn http://localhost:8000/publish\""
+  },
+  "keywords": [
+    "serial",
+    "fiction"
+  ],
+  "author": "Chapel",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "filenamify": "^2.1.0",
+    "fs-jetpack": "^2.2.0",
+    "gray-matter": "^4.0.1",
+    "gulp": "^3.9.1",
+    "js-string-escape": "^1.0.1",
+    "marked": "^0.5.1",
+    "opn-cli": "^4.0.0"
+  }
+}

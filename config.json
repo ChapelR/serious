@@ -1,0 +1,7 @@
+{
+    "title": "Serious Test",
+    "input": "./src",
+    "output": "./publish/content",
+    "about": "",
+    "blog": "https://twinelab.net/blog"
+}
