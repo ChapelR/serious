@@ -7,6 +7,10 @@ body {
     color: #777;
 }
 
+.hide {
+    display: none;
+}
+
 .pure-img-responsive {
     max-width: 100%;
     height: auto;

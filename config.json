@@ -4,5 +4,10 @@
     "input": "./src",
     "output": "./publish/content",
     "about": "",
-    "blog": "https://twinelab.net/blog"
+    "blog": "https://twinelab.net/blog",
+    "debug": false,
+    "refetch": {
+        "main": 7200000,
+        "perEpisode": 86400000
+    }
 }
