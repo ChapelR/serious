@@ -10,9 +10,10 @@
   "scripts": {
     "jsonify": "node ./scripts/jsonify.js",
     "clean": "node ./scripts/clean.js",
-    "build": "npm run clean && npm run jsonify",
+    "debug": "node ./scripts/setdebug.js",
+    "build": "npm run debug && npm run clean && npm run jsonify",
     "opn": "opn",
-    "serve": "concurrently \"http-server -a localhost -p 8000\" \"opn http://localhost:8000/publish\""
+    "serve": "concurrently \"http-server -a localhost -p 8000 -c-1\" \"opn http://localhost:8000/publish\""
   },
   "keywords": [
     "serial",

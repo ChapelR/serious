@@ -9,7 +9,7 @@
   "title": "Serious Test",
   "subtitle": "",
   "input": "./src",
-  "output": "./publish/content",
+  "output": "./publish",
   "about": "",
   "blog": "https://twinelab.net/blog",
   "debug": false,
