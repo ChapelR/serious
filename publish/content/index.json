@@ -1,9 +1,14 @@
 {
   "story": [
     {
-      "title": "An Awesome Story",
+      "title": "Install",
+      "episode": 2,
+      "file": "install.json"
+    },
+    {
+      "title": "Introduction",
       "episode": 1,
-      "file": "an-awesome-story.json"
+      "file": "introduction.json"
     }
   ],
   "title": "Serious Test",
