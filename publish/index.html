@@ -6,14 +6,17 @@
     <meta name="description" content="/% description %/">
     <title>Serious</title>
     
+    <link rel="stylesheet" href="./styles/loader.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/sidebar.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/md.css">
 </head>
 <body data-debug="on" data-ep="0">
-
 <div id="layout">
+    <div id="overlay">
+        <div class="loader">Loading...</div>
+    </div>
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
         <!-- Hamburger icon -->
@@ -70,6 +73,7 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="./scripts/storage.js"></script>
+<script src="./scripts/events.js"></script>
 <script src="./scripts/renderer.js"></script>
 <script src="./scripts/load.js"></script>
 <script src="./scripts/menu.js"></script>

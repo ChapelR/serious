@@ -26,13 +26,13 @@
                 $('#content').attr('data-view', 'ream');
             }
             if (data.story.length > 1) {
-                $('#last-link').removeClass('hide');
+                $('#last-link').parent('li.pure-menu-item').removeClass('hide');
             }
             if (data.blog) {
-                $('#blog-link').removeClass('hide');
+                $('#blog-link').parent('li.pure-menu-item').removeClass('hide');
             }
             if (data.about) {
-                $('#about-link').removeClass('hide');
+                $('#about-link').parent('li.pure-menu-item').removeClass('hide');
             }
         });
     }

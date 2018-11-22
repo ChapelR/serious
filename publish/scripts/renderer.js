@@ -15,7 +15,9 @@
                 console.error('Could not find story data.');
             }
         }
-        var episode = data.story[num - 1];
+        var episode = data.story.find( function (ep) {
+            return ep.episode === num;
+        });
         if (!episode) {
             emit(':render-start', { title : '404', content : null });
             $('#title').empty().append('404');

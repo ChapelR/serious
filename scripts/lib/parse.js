@@ -56,11 +56,14 @@ function createIndex (episodes, path) {
             ep.data.filename = filename;
             index.story.push({
                 title : ep.data.title,
-                excerpt : ep.data.excerpt,
+                description : ep.data.description,
                 episode : Number(ep.data.episode),
                 file : filename
             });
             reader.write(ep, path);
+        });
+        index.story.sort( function (a, b) {
+            return a.episode - b.episode;
         });
         reader.write(index, path, 'index.json');
     } catch (err) {

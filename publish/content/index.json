@@ -1,14 +1,16 @@
 {
   "story": [
     {
-      "title": "Install",
-      "episode": 2,
-      "file": "install.json"
-    },
-    {
       "title": "Introduction",
+      "description": "What is Serious?",
       "episode": 1,
       "file": "introduction.json"
+    },
+    {
+      "title": "Install",
+      "description": "Installation Guide",
+      "episode": 2,
+      "file": "install.json"
     }
   ],
   "title": "Serious Test",

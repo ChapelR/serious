@@ -38,5 +38,17 @@
                 handle(':render-end', cb);
             }
         }
-    }
+    };
+
+    Serious.on.episode.loaded( function () {
+        $(document).ready(function () {
+            $('#overlay').addClass('hide');
+        });
+    });
+    Serious.on.data.loaded( function () {
+        $(document).ready(function () {
+            $('#overlay').addClass('hide');
+        });
+    });
+    
 }());
