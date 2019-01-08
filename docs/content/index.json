@@ -1,0 +1,38 @@
+{
+  "story": [
+    {
+      "title": "Introduction",
+      "description": "What is Serious?",
+      "episode": 1,
+      "file": "introduction.json"
+    },
+    {
+      "title": "Install",
+      "description": "Installation Guide",
+      "episode": 2,
+      "file": "install.json"
+    }
+  ],
+  "title": "Serious Test",
+  "displayTitle": "",
+  "subtitle": "",
+  "posts": "episodes",
+  "input": "./src",
+  "output": "./publish",
+  "links": [
+    {
+      "text": "About",
+      "url": "https://twinelab.net"
+    },
+    {
+      "text": "Blog",
+      "url": "https://twinelab.net/blog"
+    }
+  ],
+  "debug": false,
+  "disqusShortname": "",
+  "refetch": {
+    "main": 7200000,
+    "perEpisode": 86400000
+  }
+}
