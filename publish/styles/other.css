@@ -1,0 +1,65 @@
+div.episode-card {
+    box-shadow: 0 0 8px #888;
+    margin: 1em;
+    padding: 1em;
+    cursor: pointer;
+}
+#deck h1 {
+    text-align: center;
+    border: 0;
+}
+#content h1.episode-title {
+    text-align: left;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#content h2.episode-desc {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #555;
+    border-top: 1px solid #ccc;
+    font-style: italic;
+    margin: 0;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+div.episode-card:hover h1, div.episode-card:active h1 {
+    color: #888;
+}
+div.episode-card:hover p, div.episode-card:active p {
+    color: #555;
+}
+div.episode-card:hover, div.episode-card:active {
+    box-shadow: 0 0 4px #888;
+}
+p.episode-preview {
+    max-height: 8em;
+    overflow: hidden;
+    position: relative;
+}
+p.episode-preview:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(transparent 5em, #fff);
+}
+p.episode-preview.empty {
+    height: unset;
+    text-align: center;
+    font-size: 2rem;
+}
+@media screen and (max-width: 600px) {
+    div.episode-card {
+        margin: 0.5em -0.8em;
+    }
+    #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+        padding: 0;
+    }
+}

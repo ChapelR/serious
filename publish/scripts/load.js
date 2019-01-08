@@ -23,7 +23,7 @@
                 } else {
                     $('#subtitle').hide();
                 }
-                $('#content').attr('data-view', 'ream');
+                $('#content').attr('data-view', 'ream').append(Serious.recents(data));
             }
             if (data.story.length > 1) {
                 $('#last-link').parent('li.pure-menu-item').removeClass('hide');
