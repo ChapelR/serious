@@ -21,13 +21,13 @@
   "author": "Chapel",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^4.0.1",
+    "concurrently": "^4.1.0",
     "filenamify": "^2.1.0",
     "fs-jetpack": "^2.2.0",
     "gray-matter": "^4.0.1",
     "gulp": "^3.9.1",
     "js-string-escape": "^1.0.1",
-    "marked": "^0.5.1",
+    "marked": "^0.5.2",
     "opn-cli": "^4.0.0"
   }
 }
