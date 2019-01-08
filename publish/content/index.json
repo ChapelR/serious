@@ -14,12 +14,23 @@
     }
   ],
   "title": "Serious Test",
+  "displayTitle": "",
   "subtitle": "",
+  "posts": "episodes",
   "input": "./src",
   "output": "./publish",
-  "about": "",
-  "blog": "https://twinelab.net/blog",
+  "links": [
+    {
+      "text": "About",
+      "url": "https://twinelab.net"
+    },
+    {
+      "text": "Blog",
+      "url": "https://twinelab.net/blog"
+    }
+  ],
   "debug": false,
+  "disqusShortname": "",
   "refetch": {
     "main": 7200000,
     "perEpisode": 86400000

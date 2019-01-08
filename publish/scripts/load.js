@@ -6,9 +6,9 @@
         Serious.emit(':data-load-end', data);
 
         // vital info
-        var title = (data.title) ? data.title : "Untitled";
+        var title = (data.displayTitle) ? data.displayTitle : (data.title) ? data.title : "Untitled";
         var subtitle = data.subtitle || "";
-        document.title = data.title;
+        document.title = title;
 
         $(function () {
             var url = new Url;
@@ -31,8 +31,22 @@
             if (data.blog) {
                 $('#blog-link').parent('li.pure-menu-item').removeClass('hide');
             }
-            if (data.about) {
-                $('#about-link').parent('li.pure-menu-item').removeClass('hide');
+            if (data.links && Array.isArray(data.links) && data.links.length > 0) {
+                // append user links
+                data.links.forEach( function (link) {
+                    if (link.url && typeof link.url === 'string' && link.text && typeof link.text === 'string') {
+                        $('#menu .pure-menu-list')
+                            .append($(document.createElement('li'))
+                                .addClass('pure-menu-item')
+                                .append($(document.createElement('a'))
+                                    .addClass('pure-menu-link')
+                                    .attr({
+                                        href : link.url,
+                                        target : '_blank'
+                                    })
+                                    .append(link.text)));
+                    }
+                });
             }
         });
     }
