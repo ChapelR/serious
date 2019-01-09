@@ -15,6 +15,8 @@
             if (url.query && url.query.ep) {
                 // render the appropriate episode
                 window.Serious.render(Number(url.query.ep), data);
+            } else if (url.query && url.query.meta) {
+                // render meta posts
             } else {
                 // render the landing page
                 $('#title').empty().append(title);
@@ -23,7 +25,11 @@
                 } else {
                     $('#subtitle').hide();
                 }
-                $('#content').attr('data-view', 'ream').append(Serious.recents(data));
+                if (url.query && url.query.list) {
+                    $('#content').attr('data-view', 'ream').append(Serious.list(data));
+                } else {
+                    $('#content').attr('data-view', 'ream').append(Serious.recents(data));
+                }
             }
             if (data.story.length > 1) {
                 $('#last-link').parent('li.pure-menu-item').removeClass('hide');

@@ -64,6 +64,7 @@
 
     function episodeLink (num) {
         var url = new Url;
+        url.clearQuery();
         url.query.ep = num;
         window.location.href = url.toString();
     }
