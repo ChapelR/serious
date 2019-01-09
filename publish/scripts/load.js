@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function loader (data) {
+    var loader = function (data) {
         window.Serious.data = data;
         Serious.emit(':data-load-end', data);
 
@@ -11,12 +11,12 @@
         document.title = title;
 
         $(function () {
-            var url = new Url;
+            var url = new Url();
             if (url.query && url.query.ep) {
                 // render the appropriate episode
-                window.Serious.render(Number(url.query.ep), data);
+                window.Serious.render(Number(url.query.ep), false, data);
             } else if (url.query && url.query.meta) {
-                // render meta posts
+                window.Serious.render(url.query.meta.trim().toLowerCase(), true, data);
             } else {
                 // render the landing page
                 $('#title').empty().append(title);
@@ -34,16 +34,28 @@
             if (data.story.length > 1) {
                 $('#last-link').parent('li.pure-menu-item').removeClass('hide');
             }
-            if (data.blog) {
-                $('#blog-link').parent('li.pure-menu-item').removeClass('hide');
+            if (data.meta && Array.isArray(data.meta) && data.meta.length) {
+                data.meta.forEach( function (meta, idx) {
+                    var text = meta.link.trim();
+                    $('#menu .pure-menu-list').append($(document.createElement('li'))
+                        .addClass('pure-menu-item' + (idx === 0 ? ' menu-item-divided' : ''))
+                        .append($(document.createElement('a'))
+                            .addClass('pure-menu-link')
+                            .attr('href', 'javascript:void(0)')
+                            .append(text)
+                            .on('click', function (ev) {
+                                ev.preventDefault();
+                                Serious.metaLink(meta.id);
+                            })));
+                });
             }
             if (data.links && Array.isArray(data.links) && data.links.length > 0) {
                 // append user links
-                data.links.forEach( function (link) {
+                data.links.forEach( function (link, idx) {
                     if (link.url && typeof link.url === 'string' && link.text && typeof link.text === 'string') {
                         $('#menu .pure-menu-list')
                             .append($(document.createElement('li'))
-                                .addClass('pure-menu-item')
+                                .addClass('pure-menu-item' + (idx === 0 ? ' menu-item-divided' : ''))
                                 .append($(document.createElement('a'))
                                     .addClass('pure-menu-link')
                                     .attr({
@@ -55,7 +67,7 @@
                 });
             }
         });
-    }
+    };
     // attempt to load from storage, fallback to JSON
     Serious.emit(':data-load-start');
     var loadState = Serious.storage.load();

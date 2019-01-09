@@ -7,7 +7,7 @@
         $(document).trigger(Object.assign({ type : type }, data));
     }
 
-    function render (num, data) {
+    function render (num, meta, data) {
         if (!data) {
             if (Serious.data) {
                 data = Serious.data;
@@ -15,9 +15,16 @@
                 console.error('Could not find story data.');
             }
         }
-        var episode = data.story.find( function (ep) {
-            return ep.episode === num;
-        });
+        var episode;
+        if (meta) {
+            episode = data.meta.find( function (ep) {
+                return ep.id === num;
+            });
+        } else {
+            episode = data.story.find( function (ep) {
+                return ep.episode === num;
+            });
+        }
         if (!episode) {
             emit(':render-start', { title : '404', content : null });
             $('#title').empty().append('404');
@@ -29,7 +36,7 @@
         function loader (data) {
             emit(':render-start', data);
             $( function () {
-                $('#title').empty().append(data.data.episode + ': ' + data.data.title);
+                $('#title').empty().append((meta ? '' : data.data.episode + ': ') + data.data.title);
                 if (episode.subtitle) {
                     $('#subtitle').empty().append(data.data.subtitle).show();
                 } else {
@@ -51,7 +58,7 @@
             emit(':episode-load-end', episode);
             loader(loadState);
         } else {
-            $.getJSON('./content/episodes/' + episode.file, function (data) {
+            $.getJSON((meta ? './content/meta/' : './content/episodes/') + episode.file, function (data) {
                 debug & console.log('loaded from file', data);
                 emit(':episode-load-end', episode);
                 loader(data);
@@ -63,13 +70,22 @@
     }
 
     function episodeLink (num) {
-        var url = new Url;
+        var url = new Url();
+        url.clearQuery();
         url.query.ep = num;
+        window.location.href = url.toString();
+    }
+
+    function metaLink (id) {
+        var url = new Url();
+        url.clearQuery();
+        url.query.meta = id;
         window.location.href = url.toString();
     }
 
     window.Serious.render = render;
     window.Serious.epLink = episodeLink;
+    window.Serious.metaLink = metaLink;
     window.Serious.emit = emit;
     window.Serious.debug = debug;
 }());

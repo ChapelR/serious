@@ -8,7 +8,11 @@ var config = require('../../config.json');
 var normalize = function (string) {
     var ret = filenamify(string, { replacement : '-' });
     return ret.trim().toLowerCase().replace(/\s+/g, '-');
-}
+};
+
+var isMeta = function (ep) {
+    return typeof ep.data.episode === 'string' && ep.data.episode.trim().toLowerCase() === 'meta';
+};
 
 var reader = {
     getFiles : function (inPath) {
@@ -19,7 +23,11 @@ var reader = {
     },
     write : function (obj, path, file) {
         if (!file) {
-            path = path + '/episodes/' + obj.data.filename;
+            if (isMeta(obj)) {
+                path = path + '/meta/' + obj.data.filename;
+            } else {
+                path = path + '/episodes/' + obj.data.filename;
+            }
         } else {
             path = path + '/' + file;
         }
@@ -44,7 +52,7 @@ function parseFiles (array) {
 }
 
 function createIndex (episodes, path) {
-    var index = Object.assign({ story : [] }, config);
+    var index = Object.assign({ story : [], meta : [] }, config);
     try {
         episodes.forEach( function (ep) {
             if (index.story.find( function (ind) {
@@ -54,12 +62,25 @@ function createIndex (episodes, path) {
             }
             var filename = normalize(ep.data.title) + '.json';
             ep.data.filename = filename;
-            index.story.push({
-                title : ep.data.title,
-                description : ep.data.description,
-                episode : Number(ep.data.episode),
-                file : filename
-            });
+            if (isMeta(ep)) {
+                var id = normalize(ep.data.title);
+                index.meta.push({
+                    title : ep.data.title,
+                    description : ep.data.description,
+                    episode : 'meta:' + id,
+                    id : id,
+                    meta : true,
+                    file : filename,
+                    link : ep.data.link || ep.data.title
+                });
+            } else {
+                index.story.push({
+                    title : ep.data.title,
+                    description : ep.data.description,
+                    episode : Number(ep.data.episode),
+                    file : filename
+                });
+            }
             reader.write(ep, path);
         });
         index.story.sort( function (a, b) {

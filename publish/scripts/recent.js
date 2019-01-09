@@ -30,12 +30,13 @@
         data.story.sort( function (a, b) {
             return Number(a.episode) - Number(b.episode);
         });
+        var eps, lt;
         if (recents) {
-            var eps = data.story.reverse();
-            var lt = (eps.length >= data.recentMax) ? data.recentMax : eps.length;
+            eps = data.story.reverse();
+            lt = (eps.length >= data.recentMax) ? data.recentMax : eps.length;
         } else {
-            var eps = data.story;
-            var lt = eps.length;
+            eps = data.story;
+            lt = eps.length;
         }
         var $els = [];
         for (var i = 0; i < lt; i++) {
@@ -52,7 +53,7 @@
                 });
 
             if (i < (recents ? data.recentsExcerpts : data.episodesExcerpts)) {
-                function loader (data, $capturedCard) {
+                var loader = function (data, $capturedCard) {
                     emit(':render-start', data);
                     $( function () {
                         if (data.data.subtitle) {
@@ -65,7 +66,7 @@
                             emit(':render-end', data);
                         });
                     });
-                }
+                };
                 // we're creating a block scope here to capture the current $card
                 try { throw $card; }
                 catch($capturedCard) {

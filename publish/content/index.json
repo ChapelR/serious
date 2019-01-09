@@ -13,6 +13,17 @@
       "file": "install.json"
     }
   ],
+  "meta": [
+    {
+      "title": "Test",
+      "description": "Testing the meta posts",
+      "episode": "meta:test",
+      "id": "test",
+      "meta": true,
+      "file": "test.json",
+      "link": "Test"
+    }
+  ],
   "title": "Serious Test",
   "displayTitle": "",
   "subtitle": "",

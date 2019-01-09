@@ -67,5 +67,5 @@
     window.Serious.storage = {
         save : save,
         load : load
-    }
+    };
 }());

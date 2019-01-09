@@ -18,7 +18,7 @@
     });
 
     // get last five episodes 
-    function getRecents (data) {
+    function getList (data, recents) {
         if (!data) {
             if (Serious.data) {
                 data = Serious.data;
@@ -30,9 +30,14 @@
         data.story.sort( function (a, b) {
             return Number(a.episode) - Number(b.episode);
         });
-        var eps = data.story.reverse();
-        console.log(eps);
-        var lt = (eps.length >= 5) ? 5 : eps.length;
+        var eps, lt;
+        if (recents) {
+            eps = data.story.reverse();
+            lt = (eps.length >= data.recentMax) ? data.recentMax : eps.length;
+        } else {
+            eps = data.story;
+            lt = eps.length;
+        }
         var $els = [];
         for (var i = 0; i < lt; i++) {
             var ep = eps[i];
@@ -47,9 +52,8 @@
                     Serious.epLink(Number($(this).attr('data-goto')));
                 });
 
-            if (i === 0) {
-                function loader (data) {
-                    var $capturedCard = $card;
+            if (i < (recents ? data.recentsExcerpts : data.episodesExcerpts)) {
+                var loader = function (data, $capturedCard) {
                     emit(':render-start', data);
                     $( function () {
                         if (data.data.subtitle) {
@@ -62,21 +66,26 @@
                             emit(':render-end', data);
                         });
                     });
-                }
-                // attempt to load from storage, fallback to JSON
-                emit(':episode-load-start', ep);
-                var loadState = Serious.storage.load(ep);
-                if (loadState) {
-                    debug && console.log('loaded from storage', loadState);
-                    emit(':episode-load-end', ep);
-                    loader(loadState);
-                } else {
-                    $.getJSON('./content/episodes/' + ep.file, function (data) {
-                        debug & console.log('loaded from file', data);
+                };
+                // we're creating a block scope here to capture the current $card
+                try { throw $card; }
+                catch($capturedCard) {
+                    // attempt to load from storage, fallback to JSON
+                    emit(':episode-load-start', ep);
+                    var loadState = Serious.storage.load(ep);
+                    if (loadState) {
+                        debug && console.log('loaded from storage', loadState);
                         emit(':episode-load-end', ep);
-                        loader(data);
-                        Serious.storage.save(data, true);
-                    });
+                        loader(loadState, $capturedCard);
+                    } else {
+                        $.getJSON('./content/episodes/' + ep.file, function (data) {
+                            debug & console.log('loaded from file', data);
+                            emit(':episode-load-end', ep);
+                            loader(data, $capturedCard);
+                            Serious.storage.save(data, true);
+                        });
+                    }
+                    $els.push($capturedCard);
                 }
             } else {
                 $card.append(html('p', { classes : 'episode-preview empty', content : '&hellip;' }));
@@ -86,11 +95,16 @@
         return $els;
     }
 
-    function createRecentsList(data) {
-        return $container.append(getRecents(data));
+    function createRecentsList (data) {
+        return $container.append(getList(data, true));
+    }
+
+    function createEpisodeList (data) {
+        return $container.empty().append('<h1>Episode List</h1>', getList(data));
     }
 
     window.Serious = window.Serious || {};
     window.Serious.recents = createRecentsList;
+    window.Serious.list = createEpisodeList;
 
 }());
