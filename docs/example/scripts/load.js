@@ -16,6 +16,7 @@
                 // render the appropriate episode
                 window.Serious.render(Number(url.query.ep), false, data);
             } else if (url.query && url.query.meta) {
+                // render the appropriate meta post
                 window.Serious.render(url.query.meta.trim().toLowerCase(), true, data);
             } else {
                 // render the landing page
@@ -31,6 +32,9 @@
                     $('#content').attr('data-view', 'ream').append(Serious.recents(data));
                 }
             }
+            if (data.copyright && typeof data.copyright === 'string' && data.copyright.trim()) {
+                $('#user-copyright').empty().append(data.copyright, '<br />');
+            }
             if (data.story.length > 1) {
                 $('#last-link').parent('li.pure-menu-item').removeClass('hide');
             }
@@ -41,7 +45,10 @@
                         .addClass('pure-menu-item' + (idx === 0 ? ' menu-item-divided' : ''))
                         .append($(document.createElement('a'))
                             .addClass('pure-menu-link')
-                            .attr('href', 'javascript:void(0)')
+                            .attr({
+                                href : '#',
+                                title : meta.subtitle || ''
+                            })
                             .append(text)
                             .on('click', function (ev) {
                                 ev.preventDefault();
@@ -60,7 +67,8 @@
                                     .addClass('pure-menu-link')
                                     .attr({
                                         href : link.url,
-                                        target : '_blank'
+                                        target : '_blank',
+                                        title : link.label || ''
                                     })
                                     .append(link.text)));
                     }

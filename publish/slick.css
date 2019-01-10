@@ -1,0 +1,60 @@
+/* slick */
+
+/* features 
+    - a darker background, but with pure white reading areas
+    - a serif font (Georgia)
+    - episode cards with dark heading areas
+*/
+
+html {
+    font-family: Georgia, Times, Times New Roman, serif;
+    font-size: 18px;
+}
+
+body {
+    background: #eee;
+}
+
+#overlay {
+    background: #eee;
+}
+
+body:not([data-ep="0"]) #content {
+    background: #fff;
+}
+
+div.pure-menu {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+}
+
+div.episode-card {
+    background: #fff;
+    padding: 0;
+}
+
+#content h1.episode-title {
+    background: #555;
+    color: #fff;
+    padding: 0.5em 1em;
+    margin: 0;
+}
+
+#content div.episode-card:hover h1.episode-title {
+    background: #777;
+}
+#content div.episode-card:hover h2.episode-desc {
+    background: #555;
+}
+
+#content h2.episode-desc {
+    background: #333;
+    color: #fff;
+    border: 0;
+}
+
+p.episode-preview {
+    margin: 0;
+    padding: 1em;
+    max-height: 10em;
+}

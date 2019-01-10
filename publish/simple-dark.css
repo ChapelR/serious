@@ -1,0 +1,64 @@
+/* simple dark */
+
+/* features
+    - a light text on dark color swap for the default theme
+*/
+
+body {
+    background: #333;
+    color: #ccc;
+}
+
+#overlay {
+    background: #888;
+}
+
+#menu .pure-menu li a:hover, 
+#menu .pure-menu li a:focus {
+    background: #555;
+    color: #fff;
+}
+
+.header {
+    color: #ccc;
+}
+
+#content {
+    color: #eee;
+}
+
+#content h2.episode-desc {
+    color: #ccc;
+}
+
+div.episode-card {
+    box-shadow: 0 0 8px #000;
+    background: #444;
+}
+
+div.episode-card:hover, div.episode-card:active {
+    box-shadow: 0 0 4px #111;
+}
+
+p.episode-preview:before {
+    background: linear-gradient(transparent 5em, #444);
+}
+
+div.episode-card:hover h1, 
+div.episode-card:active h1, 
+div.episode-card:hover p, 
+div.episode-card:active p {
+    color: #ccc;
+}
+
+#content em, #content i {
+    color: #aaa;
+}
+
+#content strong, #content b {
+    color: #ccc;
+}
+
+#byline a {
+    color: #ffa4ff;
+}

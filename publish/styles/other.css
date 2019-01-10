@@ -1,3 +1,10 @@
+.menu-link span, .menu-link span:before, .menu-link span:after {
+    width: 2em;
+}
+.menu-link {
+    width: 100%;
+}
+
 div.episode-card {
     box-shadow: 0 0 8px #888;
     margin: 1em;
@@ -54,6 +61,12 @@ p.episode-preview.empty {
     height: unset;
     text-align: center;
     font-size: 2rem;
+}
+p.episode-preview img {
+    display: none;
+}
+p.episode-preview a {
+    pointer-events: none;
 }
 @media screen and (max-width: 600px) {
     div.episode-card {

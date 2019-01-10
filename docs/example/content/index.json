@@ -27,17 +27,20 @@
   "title": "Serious Test",
   "displayTitle": "",
   "subtitle": "",
+  "copyright": "&copy; 2019 Chapel. All rights reserved.",
   "posts": "episodes",
   "input": "./src",
   "output": "./publish",
   "links": [
     {
       "text": "About",
-      "url": "https://twinelab.net"
+      "url": "https://twinelab.net",
+      "label": "Learn more about Serious."
     },
     {
       "text": "Blog",
-      "url": "https://twinelab.net/blog"
+      "url": "https://twinelab.net/blog",
+      "label": "Visit my blog."
     }
   ],
   "recentMax": 5,

@@ -64,3 +64,4 @@ typings/
 author-package/
 *.zip
 *.exe
+author-package/node_modules/

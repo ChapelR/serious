@@ -7,6 +7,50 @@
         $(document).trigger(Object.assign({ type : type }, data));
     }
 
+    function getNum (n) {
+        n = Number(n);
+        if (Number.isNaN(n)) {
+            n = -1;
+        }
+        return n;
+    }
+
+    function hasPrev (num, data) {
+        num = getNum(num);
+        return data.story.some( function (ep) {
+            var target = getNum(ep.episode);
+            if ((num - 1) === target) {
+                return true;
+            }
+            return false;
+        });
+    }
+
+    function hasNext (num, data) {
+        num = getNum(num);
+        return data.story.some( function (ep) {
+            var target = getNum(ep.episode);
+            if ((num + 1) === target) {
+                return true;
+            }
+            return false;
+        });
+    }
+
+    function episodeLink (num) {
+        var url = new Url();
+        url.clearQuery();
+        url.query.ep = num;
+        window.location.href = url.toString();
+    }
+
+    function metaLink (id) {
+        var url = new Url();
+        url.clearQuery();
+        url.query.meta = id;
+        window.location.href = url.toString();
+    }
+
     function render (num, meta, data) {
         if (!data) {
             if (Serious.data) {
@@ -66,21 +110,20 @@
             });
         }
         $('#content').attr('data-view', 'episode');
-        $(document.body).attr('data-ep', String(num));
-    }
-
-    function episodeLink (num) {
-        var url = new Url();
-        url.clearQuery();
-        url.query.ep = num;
-        window.location.href = url.toString();
-    }
-
-    function metaLink (id) {
-        var url = new Url();
-        url.clearQuery();
-        url.query.meta = id;
-        window.location.href = url.toString();
+        $(document.body).attr('data-ep', (meta ? 'meta' : String(num)));
+        if (!meta) {
+            $('a.nav').hide();
+            if (hasNext(num, data)) {
+                $('#next').show().on('click', function (ev) {
+                    episodeLink(Number(num) + 1);
+                });
+            }
+            if (hasPrev(num, data)) {
+                $('#prev').show().on('click', function (ev) {
+                    episodeLink(Number(num) - 1);
+                });
+            }
+        }
     }
 
     window.Serious.render = render;
