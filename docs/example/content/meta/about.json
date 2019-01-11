@@ -1,0 +1,12 @@
+{
+  "content": "Serious is a free and open-source client-side framework for creating serialized web fiction.",
+  "data": {
+    "title": "About",
+    "label": "Learn more about Serious.",
+    "episode": "meta",
+    "description": "Learn more about Serious.",
+    "filename": "about.json"
+  },
+  "isEmpty": false,
+  "excerpt": ""
+}

@@ -11,17 +11,24 @@
       "description": "Installation Guide",
       "episode": 2,
       "file": "install.json"
+    },
+    {
+      "title": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "episode": 3,
+      "file": "lorem-ipsum.json"
     }
   ],
   "meta": [
     {
-      "title": "Test",
-      "description": "Testing the meta posts",
-      "episode": "meta:test",
-      "id": "test",
+      "title": "About",
+      "description": "Learn more about Serious.",
+      "episode": "meta:about",
+      "id": "about",
       "meta": true,
-      "file": "test.json",
-      "link": "Test"
+      "file": "about.json",
+      "link": "About",
+      "label": "Learn more about Serious."
     }
   ],
   "title": "Serious Test",
@@ -33,21 +40,21 @@
   "output": "./publish",
   "links": [
     {
-      "text": "About",
-      "url": "https://twinelab.net",
-      "label": "Learn more about Serious."
-    },
-    {
       "text": "Blog",
       "url": "https://twinelab.net/blog",
       "label": "Visit my blog."
+    },
+    {
+      "text": "Documentation",
+      "url": "https://twinelab.net/serious",
+      "label": "See the docs for Serious."
     }
   ],
   "recentMax": 5,
   "recentsExcerpts": 1,
   "episodesExcerpts": 3,
   "debug": false,
-  "disqusShortname": "",
+  "disqusShortname": "serious-1",
   "refetch": {
     "main": 7200000,
     "perEpisode": 86400000

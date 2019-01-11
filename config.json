@@ -7,14 +7,14 @@
     "input": "./src",
     "output": "./publish",
     "links": [
-        { "text": "About", "url": "https://twinelab.net", "label": "Learn more about Serious." },
-        { "text": "Blog", "url": "https://twinelab.net/blog", "label": "Visit my blog." }
+        { "text": "Blog", "url": "https://twinelab.net/blog", "label": "Visit my blog." },
+        { "text": "Documentation", "url": "https://twinelab.net/serious", "label": "See the docs for Serious." }
     ],
     "recentMax": 5,
     "recentsExcerpts": 1,
     "episodesExcerpts": 3,
     "debug": false,
-    "disqusShortname": "",
+    "disqusShortname": "serious-1",
     "refetch": {
         "main": 7200000,
         "perEpisode": 86400000

@@ -4,6 +4,11 @@
     - a light text on dark color swap for the default theme
 */
 
+html {
+    font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+    font-size: 17px;
+}
+
 body {
     background: #333;
     color: #ccc;
@@ -61,4 +66,17 @@ div.episode-card:active p {
 
 #byline a {
     color: #ffa4ff;
+}
+
+div#nav-container {
+    color: #ccc;
+}
+
+#prev:hover, #next:hover {
+    background: #111;
+    color: #eee;
+}
+
+#prev i, #next i {
+    line-height: 1.1em;
 }

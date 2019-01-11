@@ -58,3 +58,7 @@ p.episode-preview {
     padding: 1em;
     max-height: 10em;
 }
+
+#next:hover, #prev:hover {
+    background: #fff;
+}

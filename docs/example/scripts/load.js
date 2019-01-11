@@ -47,7 +47,7 @@
                             .addClass('pure-menu-link')
                             .attr({
                                 href : '#',
-                                title : meta.subtitle || ''
+                                title : meta.label || ''
                             })
                             .append(text)
                             .on('click', function (ev) {
@@ -73,6 +73,29 @@
                                     .append(link.text)));
                     }
                 });
+            }
+            // disqus support
+            if (data.disqusShortname && typeof data.disqusShortname === 'string' && data.disqusShortname.trim() &&
+                $(document.body).attr('data-ep') !== 'meta' && $(document.body).attr('data-ep') !== '0') {
+                var slugTitle = $('#title')
+                    .text()
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[^A-Za-z0-9]*/, '-');
+
+                var disqus_config = function () {
+                    this.page.url = new Url().toString();  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = $(document.body).attr('data-ep') + '-' + slugTitle; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://' + data.disqusShortname.trim() + '.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+
+                $('#disqus_thread').removeClass('hide');
             }
         });
     };

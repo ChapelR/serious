@@ -58,7 +58,7 @@ function createIndex (episodes, path) {
             if (index.story.find( function (ind) {
                 return ep.episode === ind.episode;
             })) {
-                throw new Error('Found two episodes with the same number: "' + ep.episode + '".')
+                throw new Error('Found two episodes with the same number: "' + ep.episode + '".');
             }
             var filename = normalize(ep.data.title) + '.json';
             ep.data.filename = filename;
@@ -71,7 +71,8 @@ function createIndex (episodes, path) {
                     id : id,
                     meta : true,
                     file : filename,
-                    link : ep.data.link || ep.data.title
+                    link : ep.data.link || ep.data.title,
+                    label : ep.data.label
                 });
             } else {
                 index.story.push({
