@@ -69,3 +69,4 @@ npm/node_modules/
 npm/publish/
 npm/config.json
 npm/src/
+npm/dist/

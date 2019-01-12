@@ -16,10 +16,15 @@
     "lib": "lib",
     "bin": "bin"
   },
-  "scripts": {},
+  "scripts": {
+    "exe": "pkg . -o dist/serious --public"
+  },
   "keywords": [
-    "serial",
-    "fiction"
+    "serial-fiction",
+    "fiction",
+    "episodes",
+    "static-site",
+    "generator"
   ],
   "author": "Chapel",
   "license": "MIT",
@@ -27,10 +32,7 @@
     "filenamify": "^2.1.0",
     "fs-jetpack": "^2.2.0",
     "gray-matter": "^4.0.2",
-    "gulp": "^3.9.1",
     "http-server": "^0.11.1",
-    "js-string-escape": "^1.0.1",
-    "marked": "^0.5.2",
     "opn-cli": "^4.0.0"
   },
   "devDependencies": {},
