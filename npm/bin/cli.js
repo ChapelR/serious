@@ -10,21 +10,26 @@ var directive = args[0] ? args[0].trim().toLowerCase() : 'help';
 switch (directive) {
     case 'init':
         main.init();
+        console.log('Serious story initialized.');
         break;
     case 'build':
         main.build();
-        if (args[1] && args[1].trim().toLowerCas() === 'serve') {
+        console.log('Build complete.');
+        if (args[1] && args[1].trim().toLowerCase() === 'serve') {
             main.serve();
+            console.log('Serving to localhost:8000.');
         }
         break;
     case 'clean':
         main.clean();
         break;
     case 'serve':
-        if (args[1] && args[1].trim().toLowerCas() === 'build') {
+        if (args[1] && args[1].trim().toLowerCase() === 'build') {
             main.build();
+            console.log('Build complete.');
         }
         main.serve();
+        console.log('Serving to localhost:8000.');
         break;
     default:
         console.log(`Serious CLI usage: serious [action]

@@ -1,10 +1,10 @@
 module.exports = function () {
     'use strict';
 
-    var config = require('../config.json');
     var md2json = require('./lib/parse.js');
     var jetpack = require('fs-jetpack');
     var paths = require('./pather.js')();
+    var config = require(paths.cwd + 'config.json');
 
     var idx = jetpack.read(paths.lib + 'index.tpl', 'utf8');
 

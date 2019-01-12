@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    var shouldUseStore = false;
+
     var debug = ($(document.body).attr('data-debug') === 'on');
 
     function emit (type, data) {
@@ -81,7 +83,7 @@
             emit(':render-start', data);
             $( function () {
                 $('#title').empty().append((meta ? '' : data.data.episode + ': ') + data.data.title);
-                if (episode.subtitle) {
+                if (data.data.subtitle) {
                     $('#subtitle').empty().append(data.data.subtitle).show();
                 } else {
                     $('#subtitle').hide();
@@ -96,7 +98,7 @@
         }
         // attempt to load from storage, fallback to JSON
         emit(':episode-load-start', episode);
-        var loadState = Serious.storage.load(episode);
+        var loadState = shouldUseStore ? Serious.storage.load(episode) : false;
         if (loadState) {
             debug && console.log('loaded from storage', loadState);
             emit(':episode-load-end', episode);
@@ -106,7 +108,7 @@
                 debug & console.log('loaded from file', data);
                 emit(':episode-load-end', episode);
                 loader(data);
-                Serious.storage.save(data, true);
+                shouldUseStore && Serious.storage.save(data, true);
             });
         }
         $('#content').attr('data-view', 'episode');

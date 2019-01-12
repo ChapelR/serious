@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    var shouldUseStore = false;
+
     var debug = Serious.debug || false;
     var emit = Serious.emit || function () {};
 
@@ -57,7 +59,7 @@
                     emit(':render-start', data);
                     $( function () {
                         if (data.data.subtitle) {
-                            $capturedCard.append(html('h2', { classes : 'episode-subtitle', content : data.data.subtitle }));
+                            $capturedCard.children('h1').after(html('h2', { classes : 'episode-subtitle', content : data.data.subtitle }));
                         }
                         marked(data.content, {
                             smartypants: true
@@ -72,7 +74,7 @@
                 catch($capturedCard) {
                     // attempt to load from storage, fallback to JSON
                     emit(':episode-load-start', ep);
-                    var loadState = Serious.storage.load(ep);
+                    var loadState = shouldUseStore ? Serious.storage.load(ep) : false;
                     if (loadState) {
                         debug && console.log('loaded from storage', loadState);
                         emit(':episode-load-end', ep);
@@ -82,7 +84,7 @@
                             debug & console.log('loaded from file', data);
                             emit(':episode-load-end', ep);
                             loader(data, $capturedCard);
-                            Serious.storage.save(data, true);
+                            shouldUseStore && Serious.storage.save(data, true);
                         });
                     }
                     $els.push($capturedCard);

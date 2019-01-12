@@ -1,8 +1,9 @@
 module.exports = function () {
     'use strict';
 
-    var config = require('../config.json');
+    var paths = require('./pather.js')();
+    var config = require(paths.cwd + 'config.json');
     var jetpack = require('fs-jetpack');
 
-    jetpack.remove(config.output + '/content');
+    jetpack.remove(config.output + 'content');
 };

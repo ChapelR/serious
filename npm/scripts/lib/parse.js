@@ -3,7 +3,8 @@
 var matter = require('gray-matter');
 var filenamify = require('filenamify');
 var jetpack = require('fs-jetpack');
-var config = require('../../config.json');
+var paths = require('../pather.js')();
+var config = require(paths.cwd + 'config.json');
 
 var normalize = function (string) {
     var ret = filenamify(string, { replacement : '-' });

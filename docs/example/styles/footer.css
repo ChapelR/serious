@@ -8,12 +8,12 @@
 div#nav-container {
     height: 2em;
     color: #333;
-    padding: 1em 2em;
+    padding: 1em 3em;
 }
 
 body[data-ep="0"] div#nav-container,
 body[data-ep="meta"] div#nav-container {
-    display: none;
+    visibility: hidden;
 }
 
 #next, #next i {
@@ -53,7 +53,7 @@ body[data-ep="meta"] div#nav-container {
 }
 
 #disqus_thread {
-    padding: 1em 2em;
+    padding: 1em 4em;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     margin-bottom: 1em;
@@ -76,4 +76,18 @@ body[data-ep="meta"] div#nav-container {
 #byline a:hover, 
 #byline a:active {
     color: #ee82ee;
+}
+
+@media screen and (max-width: 500px) {
+    div#nav-container {
+        padding: 1em;
+    }
+    div#disqus_thread {
+        padding: 1em 2em;
+    }
+}
+@media screen and (max-width: 400px) {
+    div#disqus_thread {
+        padding: 1em;
+    }
 }

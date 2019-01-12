@@ -7,6 +7,7 @@ module.exports = function () {
         base,
         sep : path.sep,
         scripts : base + path.sep,
-        lib : base + path.sep + 'lib' + path.sep
+        lib : base + path.sep + 'lib' + path.sep,
+        cwd : process.cwd() + path.sep
     };
 };

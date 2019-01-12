@@ -1,10 +1,10 @@
-## Overview
+# Serious (serious-fiction)
 
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
 
 [See the example story.](https://twinelab.net/serious/example)
 
-[NPM page.](https://www.npmjs.com/package/serious-fiction)
+[Home page.](https://twinelab.net/serious)
 
 MIT license.
 

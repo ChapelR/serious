@@ -8,7 +8,7 @@
     "input": "./src",
     "output": "./publish",
     "links": [
-        { "text": "About", "url": "https://twinelab.net", "label": "Learn more about Serious." },
+        { "text": "Website", "url": "https://twinelab.net", "label": "Learn more about Serious." },
         { "text": "Blog", "url": "https://twinelab.net/blog", "label": "Visit my blog." }
     ],
     "recentMax": 5,
