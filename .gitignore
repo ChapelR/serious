@@ -65,3 +65,7 @@ author-package/
 *.zip
 *.exe
 author-package/node_modules/
+npm/node_modules/
+npm/publish/
+npm/config.json
+npm/src/
