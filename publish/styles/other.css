@@ -16,10 +16,21 @@ div.episode-card {
     border: 0;
 }
 #content h1.episode-title {
+    height: 1em;
     text-align: left;
     border: 0;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+}
+#content h2.episode-subtitle {
+    font-size: 0.8em;
+    border: 0;
+    white-space: pre;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
     text-overflow: ellipsis;
 }
 #content h2.episode-desc {
@@ -34,7 +45,10 @@ div.episode-card {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-div.episode-card:hover h1, div.episode-card:active h1 {
+div.episode-card:hover h1, 
+div.episode-card:active h1,
+div.episode-card:hover h2, 
+div.episode-card:active h2 {
     color: #888;
 }
 div.episode-card:hover p, div.episode-card:active p {

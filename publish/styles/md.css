@@ -45,6 +45,7 @@
 
 #content a, #content a:link, #content a:visited {
     color: #03a9f4;
+    text-decoration: none;
 }
 
 #content a:hover {
@@ -67,4 +68,18 @@
 
 #content img {
     max-width: 100%;
+}
+
+#content code, #content pre {
+    font-family: "Source Code Pro", Consolas, monospace;
+}
+
+#content blockquote::before {
+    content: '“';
+    font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+    font-size: 2rem;
+    display: inline-block;
+    position: absolute;
+    margin-left: -1em;
+    margin-top: 0.25em;
 }

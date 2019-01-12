@@ -1,0 +1,46 @@
+{
+  "story": [
+    {
+      "title": "Example Episode",
+      "description": "Welcome to Serious!",
+      "episode": 1,
+      "file": "example-episode.json"
+    }
+  ],
+  "meta": [
+    {
+      "title": "About My Story",
+      "description": "Meta posts are awesome!",
+      "episode": "meta:about-my-story",
+      "id": "about-my-story",
+      "meta": true,
+      "file": "about-my-story.json",
+      "link": "About"
+    }
+  ],
+  "title": "The Title of Your Story",
+  "displayTitle": "",
+  "subtitle": "",
+  "description": "A description of your website (for web searches) goes here.",
+  "copyright": "&copy; [year] [your name]. All rights reserved.",
+  "posts": "episodes",
+  "input": "./src",
+  "output": "./publish",
+  "links": [
+    {
+      "text": "About",
+      "url": "https://twinelab.net",
+      "label": "Learn more about Serious."
+    },
+    {
+      "text": "Blog",
+      "url": "https://twinelab.net/blog",
+      "label": "Visit my blog."
+    }
+  ],
+  "recentMax": 5,
+  "recentsExcerpts": 1,
+  "episodesExcerpts": 3,
+  "debug": false,
+  "disqusShortname": ""
+}

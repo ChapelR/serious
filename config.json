@@ -16,7 +16,7 @@
     "debug": false,
     "disqusShortname": "serious-1",
     "refetch": {
-        "main": 7200000,
-        "perEpisode": 86400000
+        "main": 0,
+        "perEpisode": 0
     }
 }
