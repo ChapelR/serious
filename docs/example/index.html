@@ -86,7 +86,7 @@
 <!-- scripts -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="http://cdn.jsdelivr.net/gh/chapelr/serious@latest/cdn/serious.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/chapelr/serious@latest/cdn/serious.min.js"></script>
 
 </body>
 </html>
