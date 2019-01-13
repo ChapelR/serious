@@ -43,6 +43,9 @@
             if (data.meta && Array.isArray(data.meta) && data.meta.length) {
                 data.meta.forEach( function (meta, idx) {
                     var text = meta.link.trim();
+                    if (text === '_') {
+                        return;
+                    }
                     $('#menu .pure-menu-list').append($(document.createElement('li'))
                         .addClass('pure-menu-item' + (idx === 0 ? ' menu-item-divided' : ''))
                         .append($(document.createElement('a'))

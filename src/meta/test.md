@@ -1,5 +1,6 @@
 ---
 title: About
+link: _
 label: Learn more about Serious.
 episode: meta
 description: Learn more about Serious.

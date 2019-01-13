@@ -27,7 +27,7 @@
       "id": "about",
       "meta": true,
       "file": "about.json",
-      "link": "About",
+      "link": "_",
       "label": "Learn more about Serious."
     }
   ],
