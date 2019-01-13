@@ -31,23 +31,24 @@
       "label": "Learn more about Serious."
     }
   ],
-  "title": "Serious Test",
+  "title": "The Title of Your Story",
   "displayTitle": "",
   "subtitle": "",
+  "description": "A description of your website (for web searches) goes here.",
   "copyright": "&copy; 2019 Chapel. All rights reserved.",
   "posts": "episodes",
   "input": "./src",
   "output": "./publish",
   "links": [
     {
+      "text": "Website",
+      "url": "https://twinelab.net",
+      "label": "Learn more about Serious."
+    },
+    {
       "text": "Blog",
       "url": "https://twinelab.net/blog",
       "label": "Visit my blog."
-    },
-    {
-      "text": "Documentation",
-      "url": "https://twinelab.net/serious",
-      "label": "See the docs for Serious."
     }
   ],
   "recentMax": 5,
@@ -55,8 +56,5 @@
   "episodesExcerpts": 3,
   "debug": false,
   "disqusShortname": "serious-1",
-  "refetch": {
-    "main": 0,
-    "perEpisode": 0
-  }
+  "googleAnalytics": "UA-132388472-1"
 }
