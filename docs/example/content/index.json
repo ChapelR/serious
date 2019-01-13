@@ -31,10 +31,10 @@
       "label": "Learn more about Serious."
     }
   ],
-  "title": "The Title of Your Story",
+  "title": "Serious Example",
   "displayTitle": "",
   "subtitle": "",
-  "description": "A description of your website (for web searches) goes here.",
+  "description": "Serious is a software framework for creating serialized fiction for the web.",
   "copyright": "&copy; 2019 Chapel. All rights reserved.",
   "posts": "episodes",
   "input": "./src",
