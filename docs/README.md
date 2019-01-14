@@ -17,6 +17,7 @@ MIT license.
 - Users can easily access the episode list, view the most recent episodes, or start at the beginning.  
 - Support for custom CSS themes.  
 - Comments via Disqus. Just plug in a shortname and go.  
+- Support for Google Analytics; just plug in a tracking ID.  
 - Highly configurable.  
 - Designed for authors who may not be experienced in web development (like me!).  
 - Generates a simple static web page--host it anywhere.  
