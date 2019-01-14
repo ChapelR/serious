@@ -1,5 +1,7 @@
 ## Overview
 
+![](https://img.shields.io/david/ChapelR/serious-npm.svg) ![](https://img.shields.io/npm/l/serious-fiction.svg) ![](https://img.shields.io/npm/v/serious-fiction.svg) [![](https://img.shields.io/github/last-commit/ChapelR/serious-npm.svg)](https://github.com/ChapelR/serious-npm) 
+
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
 
 [See the example story.](https://twinelab.net/serious/example)
@@ -74,6 +76,7 @@ When you run `serious init`, a `config.json` file will be added to your director
 |`episodesExcerpts`|`3`|This controls how many episodes on the episode list have their content shown, similar to `recentsExcerpts`.|
 |`debug`|`false`|This turns on debug features, including console logs and other stuff. Generally not needed for most users. Probably make sure it's false before deploying.|
 |`disqusShortname`|`""`|You can set up comments through [Disqus](https://disqus.com/). A comment thread will be added to every episode, but not to meta posts, lists, etc. Just add your shortname here, no further configuration is necessary!|
+|`googleAnalytics`|`""`|You can set up [Google Analytics](https://analytics.google.com) for your Serious story. Just create an account, enter your site's URL, and copy and paste the tracking ID here.|
 
 ## Writing Episodes
 
@@ -108,6 +111,7 @@ When numbering your episodes, **start at 1** (don't start at 0, it will cause an
 ---
 title: About My Story
 link: About
+label : Learn more...
 subtitle: This is a meta post!
 episode: meta
 description: Meta posts are awesome!
@@ -115,7 +119,19 @@ description: Meta posts are awesome!
 By creating a post and making it's episode property in the header `meta` instead of a number, you can create a *meta post*, which will automatically appear as a link in the sidebar.
 ```
 
+The `label` parameter adds a title attribute (and "tooltip") to the generated link in the sidebar.
+
 The parameters of a meta post are otherwise the same as a normal episode. Note that the titles of meta posts should be unique; episodes don't have this limitation (though it is wise).
+
+## URL Scheme
+
+You can create markdown links to specific episodes by creating links that look like this: 
+
+```
+[Last week](./?ep=10) our heroes...
+```
+
+The above would create a link to episode 10. To create links to meta posts, you need to know the title, which is normalized and slugified (e.g. trimmed, lower-cased, and all non-letter and non-number values are replaced with dashes). For example, if the `title` parameter is '`About`' it becomes `./?meta=about`, while `Where is This Going?` would become `./?meta=where-is-this-going-`.
 
 ## Deploying
 
