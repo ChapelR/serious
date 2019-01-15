@@ -1,12 +1,14 @@
-## Overview
+# Overview
 
 ![](https://img.shields.io/david/ChapelR/serious-npm.svg) ![](https://img.shields.io/npm/l/serious-fiction.svg) ![](https://img.shields.io/npm/v/serious-fiction.svg) [![](https://img.shields.io/github/last-commit/ChapelR/serious-npm.svg)](https://github.com/ChapelR/serious-npm) 
 
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
 
-[See the example story.](https://twinelab.net/serious/example)
-
-[NPM page.](https://www.npmjs.com/package/serious-fiction)
+- [See the example story.](https://twinelab.net/serious/example)  
+- [Home page.](https://twinelab.net/serious)  
+- [Repo for the CLI package.](https://github.com/ChapelR/serious-npm)  
+- [Repo for the rendering engine.](https://github.com/ChapelR/serious)  
+- [CSS Themes.](https://github.com/ChapelR/serious-themes)
 
 MIT license.
 
@@ -57,7 +59,9 @@ When you run `serious init`, a `config.json` file will be added to your director
     "recentsExcerpts": 1,
     "episodesExcerpts": 3,
     "debug": false,
-    "disqusShortname": ""
+    "disqusShortname": "",
+    "googleAnalytics": "",
+    "cookieWarning": true
 }
 ```
 
@@ -78,6 +82,7 @@ When you run `serious init`, a `config.json` file will be added to your director
 |`debug`|`false`|This turns on debug features, including console logs and other stuff. Generally not needed for most users. Probably make sure it's false before deploying.|
 |`disqusShortname`|`""`|You can set up comments through [Disqus](https://disqus.com/). A comment thread will be added to every episode, but not to meta posts, lists, etc. Just add your shortname here, no further configuration is necessary!|
 |`googleAnalytics`|`""`|You can set up [Google Analytics](https://analytics.google.com) for your Serious story. Just create an account, enter your site's URL, and copy and paste the tracking ID here.|
+|`cookieWarning`|`true`|Adds a [Cookie Consent](https://cookieconsent.insites.com/)-generated cookie consent warning to you project. If you have your own solution, or just don't care, you can set this to false. Serious itself doesn't use cookies, it only requires them if you use Disqus and/or Google Analytics.|
 
 ## Writing Episodes
 
@@ -106,7 +111,7 @@ When numbering your episodes, **start at 1** (don't start at 0, it will cause an
 
 ## Meta Posts
 
-"Meta" posts are special posts that exist outside of the normal episode structure. Things like an About page, recaps, etc. Meta posts are automatically added to the sidebar as links; clicking these links renders the meta episode. To create one, make sure the `episode` parameter in the front matter is `meta` rather than a number. There is also an additional `link` parameter that can be used to label the sidebar link; if a `link` parameter isn't provided, the `title` is used instead.
+"Meta" posts are special posts that exist outside of the normal episode structure. Things like an About page, recaps, etc. Meta posts are automatically added to the sidebar as links; clicking these links renders the meta post. To create one, make sure the `episode` parameter in the front matter is `meta` rather than a number. There is also an additional `link` parameter that can be used to change the the sidebar link text; if a `link` parameter isn't provided, the `title` is used instead. If you set the `link` parameter to `_` (a single underscore) to prevent a sidebar link from being created at all.
 
 ```
 ---
@@ -140,4 +145,10 @@ Everything in the output folder (`publish` by default) is required to deploy the
 
 ## Themes
 
-I'm working on themes (pure CSS for now) to deploy for Serious in the future. Templates are not out of the question either, but I didn't design with that in mind, so we'll see. Some clean-up of the CSS will also come later. For now, though, you can write custom style rules in the `theme.css` file in your output directory to edit the styles.
+[Some CSS themes by me.](https://github.com/ChapelR/serious-themes)
+
+You can create a theme by editing the `theme.css` file in the output directory. You can restore the defaults or start over by deleting the file--a new, blank `theme.css` file will be generated next time you build. You can download and install themes by overwriting the same file.
+
+## Project Structure
+
+There are currently three main components to the project: [the NPM package](https://github.com/ChapelR/serious-npm), which is the Serious CLI; the [repository for the rendering engine](https://github.com/ChapelR/serious), scripts, and styles that are served to the generated web app via CDN; and a [repository for the themes](https://github.com/ChapelR/serious-themes) I've made. All of these components could do with some tidying, but the gist of it is that these three things are being developed in tandem, but have little to do with each other functionally.

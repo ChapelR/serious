@@ -1,3 +1,7 @@
+div[role='dialog'].cc-window {
+    box-shadow: 2px 0 4px #111;
+}
+
 .menu-link span, .menu-link span:before, .menu-link span:after {
     width: 2em;
 }
