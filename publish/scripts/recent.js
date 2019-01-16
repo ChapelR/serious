@@ -1,8 +1,6 @@
 (function () {
     'use strict';
 
-    var shouldUseStore = false;
-
     var debug = Serious.debug || false;
     var emit = Serious.emit || function () {};
 
@@ -74,19 +72,27 @@
                 catch($capturedCard) {
                     // attempt to load from storage, fallback to JSON
                     emit(':episode-load-start', ep);
-                    var loadState = shouldUseStore ? Serious.storage.load(ep) : false;
+                    /*
+                    var loadState = Serious.storage.load(ep);
                     if (loadState) {
-                        debug && console.log('loaded from storage', loadState);
+                        if (debug) {
+                            console.log('loaded from storage', loadState);
+                        }
                         emit(':episode-load-end', ep);
                         loader(loadState, $capturedCard);
                     } else {
-                        $.getJSON('./content/episodes/' + ep.file, function (data) {
-                            debug & console.log('loaded from file', data);
-                            emit(':episode-load-end', ep);
-                            loader(data, $capturedCard);
-                            shouldUseStore && Serious.storage.save(data, true);
-                        });
+                    */
+                    $.getJSON('./content/episodes/' + ep.file, function (data) {
+                        if (debug) {
+                            console.log('loaded from file', data);
+                        }
+                        emit(':episode-load-end', ep);
+                        loader(data, $capturedCard);
+                        // Serious.storage.save(data, true);
+                    });
+                    /*
                     }
+                    */
                     $els.push($capturedCard);
                 }
             } else {
