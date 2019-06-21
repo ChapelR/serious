@@ -1,6 +1,6 @@
 {
   "name": "serious-development",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A framework for serialized web fiction.",
   "main": "index.js",
   "directories": {
@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "concurrently": "^4.1.0",
-    "filenamify": "^2.1.0",
+    "filenamify": "^4.1.0",
     "fs-jetpack": "^2.2.0",
     "gray-matter": "^4.0.1",
     "js-string-escape": "^1.0.1",
