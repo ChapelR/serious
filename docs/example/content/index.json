@@ -56,5 +56,7 @@
   "episodesExcerpts": 3,
   "debug": false,
   "disqusShortname": "serious-1",
-  "googleAnalytics": "UA-132388472-1"
+  "googleAnalytics": "UA-132388472-1",
+  "cookiesWarning": true,
+  "version": "latest"
 }
