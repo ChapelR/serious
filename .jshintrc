@@ -1,0 +1,15 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "latedef": true,
+    "undef": true,
+    "loopfunc": true,
+    "browser": true,
+    "devel": true,
+    "jquery": true,
+    "globals": { 
+        "marked": false,
+        "Url": false,
+        "Serious": true 
+    }
+}

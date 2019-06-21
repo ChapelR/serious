@@ -2,6 +2,13 @@
     'use strict';
 
     window.Serious = window.Serious || {};
+}());
+
+/*
+(function (){
+    'use strict';
+
+    window.Serious = window.Serious || {};
     window.Serious.storageKey = '%%serious';
 
     var defaultRefetch = {
@@ -69,3 +76,4 @@
         load : load
     };
 }());
+*/

@@ -8,6 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "lint": "jshint ./publish/scripts/",
     "jsonify": "node ./scripts/jsonify.js",
     "clean": "node ./scripts/clean.js",
     "build": "npm run clean && npm run jsonify",

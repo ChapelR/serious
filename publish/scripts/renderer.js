@@ -1,8 +1,6 @@
 (function () {
     'use strict';
 
-    var shouldUseStore = false;
-
     var debug = ($(document.body).attr('data-debug') === 'on');
 
     function emit (type, data) {
@@ -98,19 +96,25 @@
         }
         // attempt to load from storage, fallback to JSON
         emit(':episode-load-start', episode);
-        var loadState = shouldUseStore ? Serious.storage.load(episode) : false;
+        /*
+        var loadState = Serious.storage.load(episode);
         if (loadState) {
             debug && console.log('loaded from storage', loadState);
             emit(':episode-load-end', episode);
             loader(loadState);
         } else {
-            $.getJSON((meta ? './content/meta/' : './content/episodes/') + episode.file, function (data) {
-                debug & console.log('loaded from file', data);
-                emit(':episode-load-end', episode);
-                loader(data);
-                shouldUseStore && Serious.storage.save(data, true);
-            });
+        */
+        $.getJSON((meta ? './content/meta/' : './content/episodes/') + episode.file, function (data) {
+            if (debug) {
+                console.log('loaded from file', data);
+            }
+            emit(':episode-load-end', episode);
+            loader(data);
+            // Serious.storage.save(data, true);
+        });
+        /*
         }
+        */
         $('#content').attr('data-view', 'episode');
         $(document.body).attr('data-ep', (meta ? 'meta' : String(num)));
         if (!meta) {

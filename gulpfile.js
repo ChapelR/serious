@@ -22,13 +22,6 @@ function processStyles (dir, out, name) {
         .pipe(gulp.dest(out));
 }
 
-// linting 
-function lint () {
-    return gulp.src('./publish/scripts/*.js') // only non-vendor scripts
-        .pipe(jshint())
-        .pipe(jshint.reporter('default', { beep : true }));
-}
-
 // clean
 function cleanCDN () {
     return del('./cdn/**/*');
@@ -72,4 +65,3 @@ gulp.task('scripts', buildScripts);
 gulp.task('styles', buildStyles);
 gulp.task('files', gulp.parallel('scripts', 'styles'));
 gulp.task('build', gulp.series('clean', 'files'));
-gulp.task('lint', lint);

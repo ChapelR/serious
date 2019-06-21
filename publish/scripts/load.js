@@ -1,8 +1,6 @@
 (function () {
     'use strict';
 
-    var shouldUseStore = false;
-
     var loader = function (data) {
         window.Serious.data = data;
         Serious.emit(':data-load-end', data);
@@ -106,16 +104,24 @@
     };
     // attempt to load from storage, fallback to JSON
     Serious.emit(':data-load-start');
-    var loadState = shouldUseStore ? Serious.storage.load() : false;
+    /*
+    var loadState = Serious.storage.load();
     if (loadState) {
         Serious.debug && console.log('loaded from storage', loadState);
         loader(loadState);
     } else {
-        $.getJSON('./content/index.json', function (data) {
-            Serious.debug && console.log('loaded from file', data);
-            loader(data);
-            // save the load state
-            shouldUseStore && Serious.storage.save(data);
-        });
+    */
+
+    $.getJSON('./content/index.json', function (data) {
+        if (Serious.debug) {
+            console.log('loaded from file', data);
+        }
+        loader(data);
+        // save the load state
+        // Serious.storage.save(data);
+    });
+
+    /*
     }
+    */
 }());
