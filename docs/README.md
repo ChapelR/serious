@@ -1,5 +1,5 @@
 # Serious (serious-fiction)
-=======
+
 ## Overview
 
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
