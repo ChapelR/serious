@@ -1,7 +1,5 @@
 # Serious (serious-fiction)
 
-## Overview
-
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
 
 - [See the example story.](https://twinelab.net/serious/example)  
@@ -62,6 +60,7 @@ When you run `serious init`, a `config.json` file will be added to your director
     "disqusShortname": "",
     "googleAnalytics": "",
     "cookieWarning": true,
+    "nswf": false,
     "version": "latest"
 }
 ```
@@ -84,7 +83,8 @@ When you run `serious init`, a `config.json` file will be added to your director
 |`disqusShortname`|`""`|You can set up comments through [Disqus](https://disqus.com/). A comment thread will be added to every episode, but not to meta posts, lists, etc. Just add your shortname here, no further configuration is necessary!|
 |`googleAnalytics`|`""`|You can set up [Google Analytics](https://analytics.google.com) for your Serious story. Just create an account, enter your site's URL, and copy and paste the tracking ID here.|
 |`cookieWarning`|`true`|Adds a [Cookie Consent](https://cookieconsent.insites.com/)-generated cookie consent warning to you project. If you have your own solution, or just don't care, you can set this to false. Serious itself doesn't use cookies, it only requires them if you use Disqus and/or Google Analytics.|
-|`version`|`"latest"`|The version of Serious's rendering engine to include. "latest" is recommended, but if you need to use a different version, you can tag it here. (Currently there is only one version, "v1.0.0", which is also "latest", this option will allow you to compile to other versions at some point.)|
+|`nsfw`|`false`|If true, adds a full-screen warning dialog asking the user to confirm their age, defaults to over 18. You can change the value to a number, e.g. `13` or `21` to ask the user to confirm that they are over other ages you may wish to check.|
+|`version`|`"latest"`|The version of Serious's rendering engine to include. "latest" is recommended, but if you need to use a different version, you can tag it here. See the [changelog](#changelog) below for a list of versions.|
 
 ## Writing Episodes
 
@@ -100,7 +100,7 @@ description: Welcome to Serious!
 This is an **example episode**!
 
 Welcome to Serious. To create episodes, you create a heading block like the one at the top of this file, then write your *markdown format content* after that.
-``` 
+```
 
 |Parameter|Description|
 |---|---|
@@ -154,3 +154,15 @@ You can create a theme by editing the `theme.css` file in the output directory. 
 ## Project Structure
 
 There are currently three main components to the project: [the NPM package](https://github.com/ChapelR/serious-npm), which is the Serious CLI; the [repository for the rendering engine](https://github.com/ChapelR/serious), scripts, and styles that are served to the generated web app via CDN; and a [repository for the themes](https://github.com/ChapelR/serious-themes) I've made. All of these components could do with some tidying, but the gist of it is that these three things are being developed in tandem, but have little to do with each other functionally.
+
+## Changelog
+
+### v1.1.0
+
+- Added the `nsfw` config setting.
+- Minor clean up.
+- Updated dependencies.
+
+### v1.0.0
+
+- Initial release.
