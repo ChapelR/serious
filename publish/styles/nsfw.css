@@ -1,0 +1,23 @@
+#overlay {
+    text-align: center;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    padding: 5em;
+    background-color: #fafafa;
+}
+
+#nsfw-confirm {
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    padding: 0.2em 1em;
+    cursor: pointer;
+    margin-top: 2em;
+    box-shadow: 0 0 4px #888;
+}
+
+#nsfw-confirm:hover {
+    text-decoration: none;
+    background-color: #222;
+    box-shadow: 0 0 2px #888;
+}

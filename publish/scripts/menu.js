@@ -7,7 +7,7 @@
         });
         $('#last-link').on('click', function () {
             if (!window.Serious || !window.Serious.data) {
-                $(document).on(':data-loaded', function (ev) {
+                $(document).on(':data-load-end', function (ev) {
                     return Serious.epLink(ev.data.story.length);
                 });
             }

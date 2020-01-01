@@ -18,5 +18,6 @@
     "refetch": {
         "main": 0,
         "perEpisode": 0
-    }
+    },
+    "nsfw": 21
 }

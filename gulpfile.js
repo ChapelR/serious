@@ -38,7 +38,8 @@ function buildScripts () {
         'renderer.js',
         'recent.js',
         'load.js',
-        'menu.js'
+        'menu.js',
+        'nsfw.js'
     ].map( function (file) {
         return path + file;
     });
@@ -52,7 +53,8 @@ function buildStyles () {
         'sidebar.css',
         'footer.css',
         'md.css',
-        'other.css'
+        'other.css',
+        'nsfw.css'
     ].map( function (file) {
         return path + file;
     });
