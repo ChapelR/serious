@@ -22,12 +22,12 @@
   "author": "Chapel",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.2",
     "filenamify": "^4.1.0",
-    "fs-jetpack": "^2.2.0",
+    "fs-jetpack": "^2.2.3",
     "gray-matter": "^4.0.1",
     "js-string-escape": "^1.0.1",
-    "marked": "^0.6.1",
+    "marked": "^0.6.3",
     "opn-cli": "^4.0.0"
   },
   "devDependencies": {
@@ -39,6 +39,6 @@
     "gulp-jshint": "^2.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1",
-    "jshint": "^2.9.7"
+    "jshint": "^2.10.3"
   }
 }
