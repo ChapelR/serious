@@ -157,6 +157,11 @@ There are currently three main components to the project: [the NPM package](http
 
 ## Changelog
 
+### v1.2.0
+
+- Fixed serve command.
+- Now uses connect and serve-static rather than http-server.
+
 ### v1.1.0
 
 - Added the `nsfw` config setting.
