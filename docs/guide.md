@@ -12,7 +12,7 @@ Serious can be a bit intimidating, and may not be for every author or every proj
 
 ## Installation
 
-If you know what NPM is and how to handle it, installing Serious is as simple as `npm i serious-ficiton -g `. If that made no sense to you, don't sweat it, just go [here](https://github.com/ChapelR/serious-npm/releases), find the latest release, and download the appropriate zip file for your operating system under its assets. Once you have the file, unzip it. The only thing you really need is the `serious.exe` file (on Windows, on other systems, the file extension may be different). If you know how to edit the environment variables on your computer, you can set up Serious to work globally on your machine, but if you don't, again, don't sweat it.
+Go [here](https://github.com/ChapelR/serious-npm/releases), find the latest release, and download the appropriate zip file for your operating system under "assets." Once you have the file, unzip it. The only thing you really need is the `serious.exe` file (on Windows, on other systems, the file extension may be different).
 
 Create a new folder where you want to make your story. Make sure the folder is empty. Drop the `serious.exe` file into it. You'll now need to open a command window in that folder. The easiest way to do that on a Windows machine is to press `Alt + D`, type `CMD` and then press `enter`.
 
@@ -30,11 +30,29 @@ Now you can set up your new Serious project. Type `serious init` into the termin
 
 If you see something similar to this, then Serious is installed and your new project is started!
 
+> For the more experienced:
+>
+> Serious can also be installed via NPM with this command: `npm i -g serious-fiction` which will immediately give you access to the same CLI as described above.
+>
+> If you go with the executable installation, you can also add the executable file to your `PATH` environment variable on your operating system if you want.
+
 ## Configuration
 
 The `config.json` file at root of your project's folder is very important--using this file you'll be able to change some of Serious' basic settings, like your story's title, subtitle (if any), description, and copyright info. You can also use this file to make use of many of Serious' built-in features. For example, you can use set the `"nsfw"` option to `true` and Serious will automatically display an age gate for your story. You can set the `"googleAnalytics"` option to a valid Google Analytics tracking ID to add analytics to your project. You can set up a [Disqus](https://disqus.com/) comment system and simply plug in the shortname to enable comments.
 
-To get edit the configuration settings, open the file in any **text editor** (important: don't open the file in a word processor). Please be careful with the quotes and commas, JSON files require specific syntax to work.
+To edit the configuration settings, open the file in any **text editor** (important: don't open the file in a word processor). Please be careful with the quotes and commas, JSON files require specific syntax to work.
+
+> Examples of text editors:
+>
+> - [Windows Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3)
+> - [TextEdit (Mac)](https://support.apple.com/guide/textedit/open-documents-txte51413d09/mac)
+> - [Sublime Text](https://www.sublimetext.com/)
+> - [Atom](https://atom.io/)
+> - [VS Code](https://code.visualstudio.com/)
+> - [Notepad++](https://notepad-plus-plus.org/)
+> - [Brackets](http://brackets.io/)
+>
+> And dozens of similar apps that can edit plain text files.
 
 For a complete breakdown, see the [documentation](https://twinelab.net/serious/#/?id=configuration). For now, you'll want to edit the title, description, and copyright at least.
 
@@ -61,7 +79,7 @@ episode: 1
 
 The metadata is provided as a list of key/value pairs. Each pair goes on its own line. Every episode you make **must** have both a `title` and an `episode` value, the latter of which should be a number&mdash;specifically a positive integer. You can also have a `subtitle` and a `description` if you want; neither is required, but the `description` is recommended.
 
-After the frontmatter, you will write your episode using markdown for formatting.
+After the frontmatter, you will write your episode using markdown for formatting.<div class='wrap'>
 
 ```markdown
 ---
@@ -74,6 +92,10 @@ This is my substitute for pistol and ball. With a philosophical flourish Cato th
 
 ...
 ```
+
+</div>When compiled into Serious, this would render as:
+
+![Example episode rendered](assets/ep.jpg)
 
 You can add more episodes simply by adding more files. So to add episode 2, create another markdown file and give it `episode: 2` in the frontmatter.
 
@@ -106,7 +128,13 @@ episode: meta
 ---
 ```
 
-The meta post will automatically be linked in the sidebar, using the post's `title` as the text of the link. You can change the link text by providing a `link` property.
+The meta post will automatically be linked in the sidebar, using the post's `title` as the text of the link. 
+
+With the above meta post and sidebar links, the sidebar should look something like this:
+
+![Example of sidebar links](assets/sidebar.jpg)
+
+You can change the link text by providing a `link` property.
 
 ```markdown
 ---

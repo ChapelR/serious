@@ -4,6 +4,8 @@
     color: #111;
     line-height: 1.5em;
     padding: 1em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #content h1 {
