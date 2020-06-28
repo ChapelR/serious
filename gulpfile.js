@@ -1,8 +1,9 @@
+// jshint node: true
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
+    terser = require('gulp-terser'),
     clean = require('gulp-clean-css'),
     autoprefix = require('gulp-autoprefixer'),
     jshint = require('gulp-jshint');
@@ -10,7 +11,7 @@ var gulp = require('gulp'),
 function processScripts (dir, out, name) {
     return gulp.src(dir)
         .pipe(concat(name))
-        .pipe(uglify().on('error', function(e){ console.log(e); }))
+        .pipe(terser().on('error', function(e){ console.log(e); }))
         .pipe(gulp.dest(out));
 }
 

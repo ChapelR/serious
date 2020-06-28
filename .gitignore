@@ -64,5 +64,6 @@ typings/
 author-package/
 *.zip
 *.exe
+**.log
 npm/
 publish/content/
