@@ -22,7 +22,7 @@
                 // render the landing page
                 $('#title').empty().append(title);
                 if (subtitle) {
-                    $('#subtitle').empty().append(title).show();
+                    $('#subtitle').empty().append(subtitle).show();
                 } else {
                     $('#subtitle').hide();
                 }

@@ -157,6 +157,10 @@ There are currently three main components to the project: [the NPM package](http
 
 ## Changelog
 
+### v1.2.2
+
+- Fixed subtitle bug.
+
 ### v1.2.1
 
 - Fixed issue with NSFW config.
