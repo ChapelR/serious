@@ -13,13 +13,28 @@
       "file": "install.json"
     },
     {
+      "title": "Example Episode",
+      "description": "Welcome to Serious!",
+      "episode": 3,
+      "file": "example-episode.json"
+    },
+    {
       "title": "Lorem Ipsum",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "episode": 3,
+      "episode": 4,
       "file": "lorem-ipsum.json"
     }
   ],
   "meta": [
+    {
+      "title": "Meta Posts",
+      "description": "Meta posts are awesome!",
+      "episode": "meta:meta-posts",
+      "id": "meta-posts",
+      "meta": true,
+      "file": "meta-posts.json",
+      "link": "Meta"
+    },
     {
       "title": "About",
       "description": "Learn more about Serious.",
@@ -31,19 +46,24 @@
       "label": "Learn more about Serious."
     }
   ],
-  "title": "Serious Example",
+  "title": "Serious Fiction",
   "displayTitle": "",
-  "subtitle": "",
-  "description": "Serious is a software framework for creating serialized fiction for the web.",
-  "copyright": "&copy; 2019 Chapel. All rights reserved.",
+  "subtitle": "A static-site generator for serial web fiction.",
+  "description": "Serious is a simple, opinionated static site generator for creating episodic web content.",
+  "copyright": "&copy; 2020 Chapel. All rights reserved.",
   "posts": "episodes",
   "input": "./src",
   "output": "./publish",
   "links": [
     {
       "text": "Website",
-      "url": "https://twinelab.net",
-      "label": "Learn more about Serious."
+      "url": "https://serious.twinelab.net",
+      "label": "Read the docs."
+    },
+    {
+      "text": "Guide",
+      "url": "https://serious.twinelab.net/#/guide",
+      "label": "A gentle guide to help you get started."
     },
     {
       "text": "Blog",
@@ -52,11 +72,12 @@
     }
   ],
   "recentMax": 5,
-  "recentsExcerpts": 1,
+  "recentsExcerpts": 3,
   "episodesExcerpts": 3,
   "debug": false,
   "disqusShortname": "serious-1",
-  "googleAnalytics": "UA-132388472-1",
+  "googleAnalytics": "",
   "cookiesWarning": true,
+  "nsfw": false,
   "version": "latest"
 }

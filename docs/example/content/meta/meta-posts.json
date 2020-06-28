@@ -1,0 +1,13 @@
+{
+  "content": "By creating a post and making it's episode property in the header `meta` instead of a number, you can create a *meta post*, which will automatically appear as a link in the sidebar.\r\n\r\nMeta posts can be used to create About pages or similar things outside the normal episode structure of a serious story.",
+  "data": {
+    "title": "Meta Posts",
+    "link": "Meta",
+    "subtitle": "This is a meta post!",
+    "episode": "meta",
+    "description": "Meta posts are awesome!",
+    "filename": "meta-posts.json"
+  },
+  "isEmpty": false,
+  "excerpt": ""
+}
