@@ -1,5 +1,9 @@
 # Serious (serious-fiction)
 
+[![Build Status](https://travis-ci.org/ChapelR/serious-npm.svg?branch=master)](https://travis-ci.org/ChapelR/serious-npm) [![Coverage Status](https://coveralls.io/repos/github/ChapelR/serious-npm/badge.svg?branch=master)](https://coveralls.io/github/ChapelR/serious-npm?branch=master)
+
+[![NPM](https://nodei.co/npm/serious-fiction.png)](https://npmjs.org/package/serious-fiction)
+
 Serious is a framework for building episodic (or serialized) fiction for the web. It takes a number of source files, written in markdown format, and compiles these files into a simple, sructured single-page web app for you to deploy to your webhost.
 
 - [See the example story.](https://twinelab.net/serious/example)  
