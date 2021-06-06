@@ -27,7 +27,7 @@
     "fs-jetpack": "^2.2.3",
     "gray-matter": "^4.0.1",
     "js-string-escape": "^1.0.1",
-    "marked": "^0.6.3",
+    "marked": "^0.7.0",
     "opn-cli": "^4.0.0"
   },
   "devDependencies": {
